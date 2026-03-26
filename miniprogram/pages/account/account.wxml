@@ -1,0 +1,146 @@
+<!--pages/account/account.wxml-->
+<view class="container">
+  <!-- 顶部标题 -->
+  <view class="header">
+    <text class="title">家庭记账</text>
+    <text class="subtitle">记录每一笔收支</text>
+  </view>
+
+  <!-- 快速统计 -->
+  <view class="stats-section">
+    <view class="stat-item">
+      <text class="stat-number">{{totalIncome}}</text>
+      <text class="stat-label">总收入</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-number">{{totalExpense}}</text>
+      <text class="stat-label">总支出</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-number">{{balance}}</text>
+      <text class="stat-label">余额</text>
+    </view>
+  </view>
+
+  <!-- 记账表单 -->
+  <view class="form-section">
+    <view class="form-title">添加记账</view>
+    
+    <view class="form-item">
+      <text class="form-label">金额</text>
+      <input 
+        class="form-input amount-input" 
+        type="digit" 
+        placeholder="0.00" 
+        value="{{amount}}"
+        bindinput="onAmountInput"
+      />
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">类型</text>
+      <view class="type-buttons">
+        <view 
+          class="type-btn {{recordType === 'income' ? 'active income' : 'income'}}" 
+          bindtap="setRecordType"
+          data-type="income"
+        >
+          <text class="type-text">收入</text>
+        </view>
+        <view 
+          class="type-btn {{recordType === 'expense' ? 'active expense' : 'expense'}}" 
+          bindtap="setRecordType"
+          data-type="expense"
+        >
+          <text class="type-text">支出</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">分类</text>
+      <picker 
+        class="category-picker" 
+        mode="selector" 
+        range="{{categories}}"
+        value="{{categoryIndex}}"
+        bindchange="onCategoryChange"
+      >
+        <view class="picker-display">
+          {{categories[categoryIndex]}}
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">备注</text>
+      <input 
+        class="form-input remark-input" 
+        placeholder="请输入备注" 
+        value="{{remark}}"
+        bindinput="onRemarkInput"
+        maxlength="20"
+      />
+    </view>
+
+    <button class="add-button {{canAdd ? 'active' : ''}}" bindtap="addRecord" disabled="{{!canAdd}}">
+      {{canAdd ? '添加记录' : '请填写完整信息'}}
+    </button>
+  </view>
+
+  <!-- 记录列表 -->
+  <view class="list-section">
+    <view class="section-header">
+      <text class="section-title">收支记录</text>
+      <view class="filter-controls">
+        <text class="filter-label">筛选:</text>
+        <picker 
+          class="filter-picker" 
+          mode="selector" 
+          range="{{filterOptions}}"
+          value="{{filterIndex}}"
+          bindchange="onFilterChange"
+        >
+          <view class="filter-display">
+            {{filterOptions[filterIndex]}}
+            <text class="picker-arrow">▼</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="record-list">
+      <view 
+        class="record-item {{item.type}}" 
+        wx:for="{{filteredRecords}}" 
+        wx:key="id"
+      >
+        <view class="record-icon">
+          <text>{{item.type === 'income' ? '💵' : '💸'}}</text>
+        </view>
+        <view class="record-content">
+          <view class="record-main">
+            <text class="record-category">{{item.category}}</text>
+            <text class="record-amount {{item.type}}">
+              {{item.type === 'income' ? '+' : '-'}}{{item.amount}}
+            </text>
+          </view>
+          <view class="record-meta">
+            <text class="record-date">{{formatDate(item.date)}}</text>
+            <text class="record-remark">{{item.remark || '无备注'}}</text>
+          </view>
+        </view>
+        <view class="record-actions">
+          <view class="action-icon delete-icon" bindtap="deleteRecord" data-id="{{item.id}}">🗑️</view>
+        </view>
+      </view>
+
+      <view class="empty-state" wx:if="{{filteredRecords.length === 0}}">
+        <text class="empty-icon">💰</text>
+        <text class="empty-text">还没有记账记录</text>
+        <text class="empty-hint">点击上方添加按钮开始记账</text>
+      </view>
+    </view>
+  </view>
+</view>
