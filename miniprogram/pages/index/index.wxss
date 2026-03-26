@@ -1,0 +1,222 @@
+/* pages/index/index.wxss */
+.container {
+  position: relative;
+  padding: 20rpx;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* 减少遮罩透明度，让背景更清晰 */
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 背景图片样式 - 调整亮度为上一次的亮度 */
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* 调整为上一次的亮度设置 */
+  filter: brightness(1.1) contrast(1.05);
+  /* 确保图片覆盖整个区域 */
+  object-fit: cover;
+}
+
+/* 欢迎区域样式 - 置顶且体积缩小1/2 */
+.welcome-section {
+  text-align: center;
+  padding: 25rpx 20rpx; /* 减少为原来的一半 */
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12rpx; /* 减小圆角 */
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 12rpx rgba(255, 107, 107, 0.15); /* 减小阴影 */
+  backdrop-filter: blur(8px);
+  border: 1rpx solid rgba(255, 255, 255, 0.4);
+  /* 置顶且不占据flex空间 */
+  flex: none;
+}
+
+.welcome-title {
+  display: block;
+  font-size: 28rpx; /* 减小字体大小 */
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 12rpx; /* 减小间距 */
+  text-shadow: 0 1rpx 3rpx rgba(255, 255, 255, 0.8);
+}
+
+.welcome-subtitle {
+  font-size: 20rpx; /* 减小字体大小 */
+  color: #34495e;
+}
+
+/* 底部功能区 */
+.bottom-section {
+  /* 占据剩余所有空间 */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* 快速操作按钮 */
+.quick-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+
+.action-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25rpx 35rpx;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16rpx;
+  box-shadow: 0 6rpx 20rpx rgba(255, 107, 107, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1rpx solid rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  width: 70%;
+}
+
+.action-button:active {
+  transform: scale(0.98);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.action-icon {
+  font-size: 50rpx;
+  margin-bottom: 15rpx;
+}
+
+.action-text {
+  font-size: 26rpx;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+/* 提醒区域样式 */
+.reminder-section {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16rpx;
+  padding: 25rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 6rpx 20rpx rgba(255, 107, 107, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1rpx solid rgba(255, 255, 255, 0.4);
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 25rpx;
+  border-left: 6rpx solid #3498db;
+  padding-left: 16rpx;
+}
+
+.reminder-list {
+  min-height: 100rpx;
+}
+
+.reminder-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #ecf0f1;
+  transition: all 0.3s ease;
+}
+
+.reminder-item:active {
+  background: rgba(52, 152, 219, 0.05);
+  border-radius: 6rpx;
+  padding-left: 8rpx;
+  padding-right: 8rpx;
+}
+
+.reminder-item:last-child {
+  border-bottom: none;
+}
+
+.reminder-text {
+  font-size: 26rpx;
+  color: #2c3e50;
+  flex: 1;
+}
+
+.reminder-text.completed {
+  text-decoration: line-through;
+  color: #7f8c8d;
+}
+
+.reminder-time {
+  font-size: 22rpx;
+  color: #7f8c8d;
+  background: rgba(52, 152, 219, 0.1);
+  padding: 6rpx 14rpx;
+  border-radius: 16rpx;
+}
+
+.no-reminder {
+  text-align: center;
+  padding: 50rpx;
+  color: #7f8c8d;
+  font-size: 26rpx;
+  font-style: italic;
+}
+
+/* 加载状态样式 */
+.loading-section {
+  text-align: center;
+  padding: 80rpx 20rpx;
+  color: #7f8c8d;
+  font-size: 26rpx;
+}
+
+/* 适配不同屏幕尺寸 */
+@media (max-width: 375px) {
+  .welcome-title {
+    font-size: 24rpx;
+  }
+  
+  .welcome-subtitle {
+    font-size: 18rpx;
+  }
+  
+  .action-button {
+    width: 85%;
+  }
+  
+  .reminder-text {
+    font-size: 24rpx;
+  }
+  
+  .reminder-time {
+    font-size: 20rpx;
+  }
+}
+
+/* 添加动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-section,
+.quick-actions,
+.reminder-section {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.reminder-item {
+  animation: fadeIn 0.4s ease-out;
+}
