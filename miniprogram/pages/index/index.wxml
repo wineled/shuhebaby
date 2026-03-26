@@ -1,0 +1,41 @@
+<!-- pages/index/index.wxml -->
+<view class="container">
+  <!-- 背景图片 -->
+  <image class="background-image" src="/images/shuhe.png" mode="aspectFill"></image>
+  
+  <!-- 顶部欢迎标语 - 置顶且体积缩小1/2 -->
+  <view class="welcome-section" style="width: 356rpx; height: 197rpx; display: block; box-sizing: border-box">
+    <text class="welcome-title">欢迎来到舒赫宝宝家庭</text>
+    <text class="welcome-subtitle">记录我们美好的家庭时光</text>
+  </view>
+
+  <!-- 底部功能区 -->
+  <view class="bottom-section">
+    <!-- 快速操作按钮 -->
+    <view class="quick-actions" wx:if="{{!isLoading}}">
+      <view class="action-button" bindtap="goToTodo" style="width: 356rpx; height: 162rpx; display: flex; box-sizing: border-box">
+        <text class="action-icon">📝</text>
+        <text class="action-text">查看所有事务</text>
+      </view>
+    </view>
+
+    <!-- 加载状态 -->
+    <view class="loading-section" wx:if="{{isLoading}}">
+      <text>加载中...</text>
+    </view>
+
+    <!-- 今日提醒 -->
+    <view class="reminder-section" wx:if="{{!isLoading}}">
+      <view class="section-title">今日提醒</view>
+      <view class="reminder-list">
+        <view class="reminder-item" wx:for="{{todayReminders}}" wx:key="id" bindtap="completeReminder" data-id="{{item.id}}">
+          <text class="reminder-text {{item.completed ? 'completed' : ''}}">{{item.content}}</text>
+          <text class="reminder-time">{{item.time}}</text>
+        </view>
+        <view class="no-reminder" wx:if="{{todayReminders.length === 0}}">
+          今天没有安排事项
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
