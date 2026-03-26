@@ -1,0 +1,350 @@
+<!--pages/health_management/health_management.wxml-->
+<view class="container">
+  <!-- 顶部标题 -->
+  <view class="header">
+    <text class="title">王荍健康管理</text>
+    <text class="subtitle">综合健康风险管理方案</text>
+  </view>
+
+  <!-- 患者信息卡片 -->
+  <view class="patient-card">
+    <view class="patient-header">
+      <text class="patient-title">患者信息</text>
+      <view class="patient-status">
+        <text class="status-indicator active">定期随访中</text>
+      </view>
+    </view>
+    <view class="patient-info">
+      <view class="info-row">
+        <text class="info-label">性别：</text>
+        <text class="info-value">女</text>
+      </view>
+      <view class="info-row">
+        <text class="info-label">年龄：</text>
+        <text class="info-value">38岁</text>
+      </view>
+      <view class="info-row">
+        <text class="info-label">主要风险：</text>
+        <view class="risk-tags">
+          <text class="risk-tag">胆囊结石</text>
+          <text class="risk-tag">乳腺结节</text>
+          <text class="risk-tag">骨质缺乏</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 胆囊结石管理 -->
+  <view class="section-card">
+    <view class="section-header">
+      <text class="section-icon">🩺</text>
+      <text class="section-title">一、 胆囊结石管理</text>
+    </view>
+    
+    <view class="risk-summary">
+      <view class="risk-item">
+        <text class="risk-label">发现：</text>
+        <text class="risk-value">超声提示胆囊内有一枚3x3mm的强回声团（结石），目前胆囊形态、大小正常，胆管无扩张</text>
+      </view>
+      <view class="risk-item">
+        <text class="risk-label">分析：</text>
+        <text class="risk-value">结石较小，且未引起胆囊炎或胆道梗阻的急性症状。但结石存在是未来发生胆囊炎、胆绞痛的风险因素</text>
+      </view>
+    </view>
+
+    <view class="subsection">
+      <text class="subsection-title">生活方式干预：</text>
+      <view class="advice-item">
+        <text class="advice-icon">⏰</text>
+        <view class="advice-content">
+          <text class="advice-text">严格遵守主检医师建议。规律三餐（尤其要吃早餐），避免长时间空腹</text>
+        </view>
+      </view>
+      <view class="advice-item">
+        <text class="advice-icon">🥗</text>
+        <view class="advice-content">
+          <text class="advice-text">饮食清淡，减少高脂肪、高胆固醇食物（如动物内脏、肥肉、油炸食品）的摄入</text>
+        </view>
+      </view>
+      <view class="advice-item">
+        <text class="advice-icon">💧</text>
+        <view class="advice-content">
+          <text class="advice-text">多饮水，保持适度运动，控制体重</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="subsection">
+      <text class="subsection-title">定期监测：</text>
+      <view class="advice-item">
+        <text class="advice-icon">📊</text>
+        <view class="advice-content">
+          <text class="advice-text">建议每6-12个月复查一次肝胆胰脾超声，观察结石大小、数量及胆囊情况的变化</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="subsection">
+      <text class="subsection-title warning">就医指征：</text>
+      <view class="advice-item warning">
+        <text class="advice-icon">⚠️</text>
+        <view class="advice-content">
+          <text class="advice-text">若出现右上腹或中上腹持续性疼痛、胀痛，尤其是进食油腻后加重，或伴有恶心、呕吐、发热、皮肤或眼睛发黄，应立即前往肝胆外科或消化内科就诊</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 乳腺结节管理 -->
+  <view class="section-card">
+    <view class="section-header">
+      <text class="section-icon">🌺</text>
+      <text class="section-title">二、 乳腺结节管理（BI-RADS 3类）</text>
+    </view>
+    
+    <view class="risk-summary">
+      <view class="risk-item">
+        <text class="risk-label">发现：</text>
+        <text class="risk-value">双侧乳腺各发现一个低回声结节（左乳9x4mm，右乳9x8mm），边界清，形态规则，血流信号不丰富</text>
+      </view>
+      <view class="risk-item">
+        <text class="risk-label">分析：</text>
+        <text class="risk-value">BI-RADS 3类意味着良性可能性极大（>98%），但仍有极低概率为非典型性，需短期随访以确认其稳定性</text>
+      </view>
+    </view>
+
+    <view class="subsection">
+      <text class="subsection-title">管理建议：</text>
+      <view class="advice-item">
+        <text class="advice-icon">🏥</text>
+        <view class="advice-content">
+          <text class="advice-title">专科随访（首要任务）：</text>
+          <text class="advice-text">建议携带本次报告，于3-6个月后前往三甲医院乳腺外科或甲乳外科进行复查。复查通常包括专科医生触诊和乳腺超声。医生会根据复查结果决定后续随访间隔（如转为6-12个月一次）</text>
+        </view>
+      </view>
+      <view class="advice-item">
+        <text class="advice-icon">⚠️</text>
+        <view class="advice-content">
+          <text class="advice-title">避免刺激：</text>
+          <text class="advice-text">保持情绪舒畅，避免焦虑。穿着合身、支撑良好的内衣。避免对乳房区域不必要的按摩或挤压</text>
+        </view>
+      </view>
+      <view class="advice-item">
+        <text class="advice-icon">👀</text>
+        <view class="advice-content">
+          <text class="advice-title">自我观察：</text>
+          <text class="advice-text">平时注意乳房有无出现新肿块、皮肤凹陷、乳头溢液（非哺乳期）等异常变化</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 骨质缺乏管理 -->
+  <view class="section-card">
+    <view class="section-header">
+      <text class="section-icon">🦴</text>
+      <text class="section-title">三、 骨质缺乏管理（骨量减少）</text>
+    </view>
+    
+    <view class="risk-summary">
+      <view class="risk-item">
+        <text class="risk-label">发现：</text>
+        <text class="risk-value">超声骨密度检测提示骨量低于同性别骨峰值，T值为-1.13，处于"骨量减少"范围</text>
+      </view>
+      <view class="risk-item">
+        <text class="risk-label">分析：</text>
+        <text class="risk-value">38岁即出现骨量减少，需引起重视，积极干预以防进展为骨质疏松。可能与钙摄入不足、维生素D缺乏、日照少、运动不足等因素有关</text>
+      </view>
+    </view>
+
+    <view class="subsection">
+      <text class="subsection-title">生活方式强化：</text>
+      <view class="advice-item">
+        <text class="advice-icon">🥛</text>
+        <view class="advice-content">
+          <text class="advice-title">补钙：</text>
+          <text class="advice-text">保证每日奶制品摄入（如牛奶300-500ml），多食豆制品、深绿色蔬菜</text>
+        </view>
+      </view>
+      <view class="advice-item">
+        <text class="advice-icon">☀️</text>
+        <view class="advice-content">
+          <text class="advice-title">补充维生素D：</text>
+          <text class="advice-text">每日保证15-30分钟的户外日照（暴露面部和手臂），促进自身维生素D合成</text>
+        </view>
+      </view>
+      <view class="advice-item">
+        <text class="advice-icon">🏃‍♀️</text>
+        <view class="advice-content">
+          <text class="advice-title">负重运动：</text>
+          <text class="advice-text">每周进行至少3次，每次30分钟以上的负重运动（如快走、慢跑、跳舞、跳绳等）</text>
+        </view>
+      </view>
+      <view class="advice-item">
+        <text class="advice-icon">🚫</text>
+        <view class="advice-content">
+          <text class="advice-title">避免风险：</text>
+          <text class="advice-text">戒烟限酒，避免过量饮用咖啡、碳酸饮料</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="subsection">
+      <text class="subsection-title">医学评估：</text>
+      <view class="advice-item">
+        <text class="advice-icon">👩‍⚕️</text>
+        <view class="advice-content">
+          <text class="advice-text">建议至内分泌科或骨科就诊。医生可能会建议进行更精确的双能X线吸收测定法（DXA）检测，并根据结果评估是否需要补充钙剂和维生素D制剂。切勿自行盲目大量补充</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 复查计划管理 -->
+  <view class="section-card">
+    <view class="section-header">
+      <text class="section-icon">📋</text>
+      <text class="section-title">复查计划管理</text>
+    </view>
+    
+    <view class="reminder-cards">
+      <view class="reminder-card-item" data-type="gallbladder" bindtap="setReminder">
+        <view class="reminder-card-header">
+          <text class="reminder-card-title">胆囊结石复查</text>
+          <text class="reminder-card-status">{{nextGallbladderCheckup || '未设置'}}</text>
+        </view>
+        <text class="reminder-card-desc">肝胆胰脾超声检查，观察结石变化</text>
+      </view>
+      
+      <view class="reminder-card-item" data-type="breast" bindtap="setReminder">
+        <view class="reminder-card-header">
+          <text class="reminder-card-title">乳腺结节复查</text>
+          <text class="reminder-card-status">{{nextBreastCheckup || '3-6个月后'}}</text>
+        </view>
+        <text class="reminder-card-desc">乳腺外科或甲乳外科专科检查</text>
+      </view>
+      
+      <view class="reminder-card-item" data-type="bone" bindtap="setReminder">
+        <view class="reminder-card-header">
+          <text class="reminder-card-title">骨质密度复查</text>
+          <text class="reminder-card-status">{{nextBoneCheckup || '尽快安排'}}</text>
+        </view>
+        <text class="reminder-card-desc">DXA检测，评估骨量状况</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 健康生活方式提醒 -->
+  <view class="section-card">
+    <view class="section-header">
+      <text class="section-icon">💡</text>
+      <text class="section-title">健康生活方式提醒</text>
+    </view>
+    
+    <view class="health-tips">
+      <view class="health-tip">
+        <text class="health-tip-icon">💧</text>
+        <view class="health-tip-content">
+          <text class="health-tip-title">每日饮水量</text>
+          <text class="health-tip-text">建议每天饮用1.5-2升水</text>
+          <view class="progress-bar">
+            <view class="progress-fill" style="width: {{waterProgress}}"></view>
+          </view>
+          <text class="progress-text">今日已喝 {{todayWaterCount}} 杯</text>
+        </view>
+        <view class="health-tip-action" bindtap="recordWater">
+          <text class="action-text">记录喝水</text>
+        </view>
+      </view>
+      
+      <view class="health-tip">
+        <text class="health-tip-icon">🥦</text>
+        <view class="health-tip-content">
+          <text class="health-tip-title">均衡饮食</text>
+          <text class="health-tip-text">低脂高纤维，多摄入钙质</text>
+        </view>
+      </view>
+      
+      <view class="health-tip">
+        <text class="health-tip-icon">🏃‍♀️</text>
+        <view class="health-tip-content">
+          <text class="health-tip-title">规律运动</text>
+          <text class="health-tip-text">每周150分钟中等强度运动</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部行动按钮 -->
+  <view class="action-buttons">
+    <view class="action-btn {{waterReminderEnabled ? 'primary' : 'secondary'}}" bindtap="setWaterReminder">
+      <text class="btn-icon">{{waterReminderEnabled ? '💧' : '💧'}}</text>
+      <text class="btn-text">{{waterReminderEnabled ? '喝水提醒中' : '设置喝水提醒'}}</text>
+    </view>
+    <view class="action-btn secondary" bindtap="shareHealthInfo">
+      <text class="btn-icon">📤</text>
+      <text class="btn-text">分享方案</text>
+    </view>
+    <view class="action-btn secondary" bindtap="viewAllReminders">
+      <text class="btn-icon">📅</text>
+      <text class="btn-text">所有提醒</text>
+    </view>
+  </view>
+
+  <!-- 日期选择器模态框 -->
+  <view class="date-picker-modal {{showDatePicker ? 'show' : ''}}">
+    <view class="modal-mask" bindtap="cancelCheckupReminder"></view>
+    <view class="modal-content">
+      <view class="modal-header">
+        <text class="modal-title">{{reminderTitle || '设置复查提醒时间'}}</text>
+      </view>
+      
+      <view class="picker-section">
+        <view class="picker-item">
+          <text class="picker-label">选择日期</text>
+          <picker 
+            class="date-picker" 
+            mode="date" 
+            value="{{checkupDate}}"
+            start="{{getTodayDate()}}"
+            end="{{getMaxDate()}}"
+            bindchange="onDateChange"
+          >
+            <view class="picker-display">
+              {{checkupDate || '请选择日期'}}
+              <text class="picker-arrow">▼</text>
+            </view>
+          </picker>
+        </view>
+        
+        <view class="picker-item">
+          <text class="picker-label">选择时间</text>
+          <picker 
+            class="time-picker" 
+            mode="time" 
+            value="{{checkupTime}}"
+            bindchange="onTimeChange"
+          >
+            <view class="picker-display">
+              {{checkupTime || '09:00'}}
+              <text class="picker-arrow">▼</text>
+            </view>
+          </picker>
+        </view>
+        
+        <view class="selected-time">
+          <text>提醒时间：{{checkupDate}} {{checkupTime}}</text>
+        </view>
+        
+        <view class="reminder-desc" wx:if="{{reminderDesc}}">
+          <text>{{reminderDesc}}</text>
+        </view>
+      </view>
+      
+      <view class="modal-footer">
+        <view class="modal-btn cancel-btn" bindtap="cancelCheckupReminder">取消</view>
+        <view class="modal-btn confirm-btn" bindtap="confirmCheckupReminder">确定</view>
+      </view>
+    </view>
+  </view>
+</view>
