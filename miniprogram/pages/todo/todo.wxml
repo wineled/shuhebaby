@@ -1,0 +1,174 @@
+<!--pages/todo/todo.wxml-->
+<view class="container">
+  <!-- 顶部标题 -->
+  <view class="header">
+    <text class="title">事务管理</text>
+    <text class="subtitle">记录和查看您的日常事务</text>
+  </view>
+
+  <!-- 添加事务表单 -->
+  <view class="form-section">
+    <view class="form-title">添加新事务</view>
+    
+    <view class="form-item">
+      <text class="form-label">事务内容</text>
+      <textarea 
+        class="form-textarea" 
+        placeholder="请输入事务内容" 
+        value="{{newTodoContent}}"
+        bindinput="onContentInput"
+        maxlength="100"
+        auto-height
+       style="height: 118rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx; width: 247rpx"></textarea>
+      <text class="char-count">{{newTodoContent.length}}/100</text>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">选择日期</text>
+      <picker 
+        class="date-picker" 
+        mode="date" 
+        value="{{selectedDate}}"
+        bindchange="onDateChange"
+        start="2020-01-01"
+        end="2030-12-31"
+      >
+        <view class="picker-display {{selectedDate ? 'has-value' : ''}}">
+          {{selectedDate ? selectedDate : '请选择日期'}}
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">优先级</text>
+      <view class="priority-buttons">
+        <view 
+          class="priority-btn {{selectedPriorityIndex === 0 ? 'active low' : 'low'}}" 
+          bindtap="selectPriority"
+          data-priority="0"
+         style="height: 102rpx; display: flex; box-sizing: border-box">
+          <text class="priority-text">低</text>
+        </view>
+        <view 
+          class="priority-btn {{selectedPriorityIndex === 1 ? 'active medium' : 'medium'}}" 
+          bindtap="selectPriority"
+          data-priority="1"
+         style="height: 99rpx; display: flex; box-sizing: border-box">
+          <text class="priority-text">中</text>
+        </view>
+        <view 
+          class="priority-btn {{selectedPriorityIndex === 2 ? 'active high' : 'high'}}" 
+          bindtap="selectPriority"
+          data-priority="2"
+         style="height: 99rpx; display: flex; box-sizing: border-box">
+          <text class="priority-text">高</text>
+        </view>
+      </view>
+    </view>
+
+    <button class="add-button {{canAdd ? 'active' : ''}}" bindtap="addTodo" disabled="{{!canAdd}}">
+      {{canAdd ? '添加事务' : '请填写完整信息'}}
+    </button>
+  </view>
+
+  <!-- 事务列表 -->
+  <view class="list-section">
+    <view class="section-header">
+      <text class="section-title">事务列表</text>
+      <view class="filter-controls">
+        <text class="filter-label">筛选:</text>
+        <picker 
+          class="filter-picker" 
+          mode="selector" 
+          range="{{filterOptions}}"
+          value="{{filterIndex}}"
+          bindchange="onFilterChange"
+        >
+          <view class="filter-display">
+            {{filterOptions[filterIndex]}}
+            <text class="picker-arrow">▼</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="sort-controls">
+      <text class="sort-label">排序:</text>
+      <view class="sort-buttons">
+        <view 
+          class="sort-btn {{sortBy === 'date' ? 'active' : ''}}" 
+          bindtap="setSort"
+          data-sort="date"
+        >
+          按日期
+        </view>
+        <view 
+          class="sort-btn {{sortBy === 'priority' ? 'active' : ''}}" 
+          bindtap="setSort"
+          data-sort="priority"
+        >
+          按优先级
+        </view>
+        <view 
+          class="sort-btn {{sortOrder === 'desc' ? 'active' : ''}}" 
+          bindtap="toggleSortOrder"
+        >
+          {{sortOrder === 'desc' ? '降序▼' : '升序▲'}}
+        </view>
+      </view>
+    </view>
+
+    <view class="todo-list">
+      <view 
+        class="todo-item {{item.completed ? 'completed' : ''}} {{getPriorityClass(item.priority)}}" 
+        wx:for="{{filteredTodos}}" 
+        wx:key="id"
+      >
+        <view class="todo-checkbox" bindtap="toggleTodo" data-id="{{item.id}}">
+          <view class="checkbox {{item.completed ? 'checked' : ''}}">
+            {{item.completed ? '✓' : ''}}
+          </view>
+        </view>
+        
+        <view class="todo-content">
+          <view class="todo-main">
+            <text class="todo-text {{item.completed ? 'completed' : ''}}">{{item.content}}</text>
+            <view class="todo-meta">
+              <text class="todo-date">{{formatDisplayDate(item.date)}}</text>
+              <text class="todo-priority {{getPriorityClass(item.priority)}}">
+                {{getPriorityText(item.priority)}}
+              </text>
+            </view>
+          </view>
+          <view class="todo-actions">
+            <view class="action-btn edit-btn" bindtap="editTodo" data-id="{{item.id}}">编辑</view>
+            <view class="action-btn delete-btn" bindtap="deleteTodo" data-id="{{item.id}}">删除</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="empty-state" wx:if="{{filteredTodos.length === 0}}">
+        <text class="empty-icon">📋</text>
+        <text class="empty-text">暂无事务记录</text>
+        <text class="empty-hint">点击上方添加按钮创建新事务</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 统计信息 -->
+  <view class="stats-section">
+    <view class="stat-item">
+      <text class="stat-number">{{totalCount}}</text>
+      <text class="stat-label">总事务</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-number">{{completedCount}}</text>
+      <text class="stat-label">已完成</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-number">{{pendingCount}}</text>
+      <text class="stat-label">待完成</text>
+    </view>
+  </view>
+</view>
