@@ -1,0 +1,658 @@
+{
+  "meta": {
+    "caseId": "c98221ae-e0d5-4570-8e65-e7ed407de2c5",
+    "caseName": "minitest-1",
+    "remarks": "",
+    "version": "0.0.1",
+    "startTime": 1765117250561,
+    "endTime": 1765117281450,
+    "appid": "wx5ad3b5706d9a3652",
+    "casePath": "",
+    "caseType": "normal",
+    "commonParams": [
+      {
+        "key": "1765117281475",
+        "name": "",
+        "value": ""
+      }
+    ]
+  },
+  "env": {
+    "wxapplibVersion": "3.10.2",
+    "devtoolsVersion": "2.01.2511282",
+    "openid": "o6zAJs66Da_PphwlC94YZNJDcE7Y",
+    "entry": {
+      "path": "pages/index/index",
+      "query": "",
+      "scene": 1001
+    },
+    "mock": [
+      "none"
+    ],
+    "maxWaitFor": 10000,
+    "ignoreSelectors": [],
+    "mockAPIs": [],
+    "cleanCache": [
+      "none"
+    ],
+    "groupTouch": false,
+    "replaySetting": {
+      "screenshot": "none"
+    },
+    "simulatorType": "wechat",
+    "device": "iPhone 12/13 (Pro)",
+    "recordAPIs": []
+  },
+  "commands": [
+    {
+      "layer": "tool",
+      "commandType": "operate",
+      "command": "startRecord",
+      "waitfor": 0,
+      "timeStamp": 1765117250561,
+      "desc": ""
+    },
+    {
+      "timeStamp": 15840,
+      "waitfor": 10000,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "native",
+      "command": "switchTab",
+      "text": "记账",
+      "data": {
+        "url": "pages/account/account"
+      }
+    },
+    {
+      "timeStamp": 16759,
+      "waitfor": 919,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "native",
+      "command": "switchTab",
+      "text": "相册",
+      "data": {
+        "url": "pages/album/album"
+      }
+    },
+    {
+      "tagName": "view",
+      "command": "touchstart",
+      "target": "view.action-btn.upload-btn",
+      "value": null,
+      "path": "pages/album/album",
+      "text": "🖼️\n上传照片",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 236.12501525878906,
+            "clientY": 287.2187805175781,
+            "force": 1,
+            "pageX": 236.12501525878906,
+            "pageY": 287.2187805175781,
+            "screenX": 189,
+            "screenY": 384
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 236.12501525878906,
+            "clientY": 287.2187805175781,
+            "force": 1,
+            "pageX": 236.12501525878906,
+            "pageY": 287.2187805175781,
+            "screenX": 189,
+            "screenY": 384
+          }
+        ]
+      },
+      "targetCandidates": [
+        "view.action-btn.upload-btn",
+        ".action-btn.upload-btn",
+        "/view/view[3]/view[2]"
+      ],
+      "timeStamp": 19555,
+      "waitfor": 2796,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchend",
+      "target": "view.action-btn.upload-btn",
+      "value": null,
+      "path": "pages/album/album",
+      "text": "🖼️\n上传照片",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 236.12501525878906,
+            "clientY": 287.2187805175781,
+            "pageX": 236.12501525878906,
+            "pageY": 287.2187805175781,
+            "screenX": 189,
+            "screenY": 384
+          }
+        ],
+        "touches": []
+      },
+      "targetCandidates": [
+        "view.action-btn.upload-btn",
+        ".action-btn.upload-btn",
+        "/view/view[3]/view[2]"
+      ],
+      "timeStamp": 19641,
+      "waitfor": 86,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "tap",
+      "target": "view.action-btn.upload-btn",
+      "value": null,
+      "path": "pages/album/album",
+      "text": "🖼️\n上传照片",
+      "eventData": {
+        "detail": {
+          "x": 236.12501525878906,
+          "y": 287.2187805175781
+        },
+        "changedTouches": [
+          {
+            "clientX": 236.12501525878906,
+            "clientY": 287.2187805175781,
+            "force": 1,
+            "pageX": 236.12501525878906,
+            "pageY": 287.2187805175781,
+            "screenX": 189,
+            "screenY": 384
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 236.12501525878906,
+            "clientY": 287.2187805175781,
+            "force": 1,
+            "pageX": 236.12501525878906,
+            "pageY": 287.2187805175781,
+            "screenX": 189,
+            "screenY": 384
+          }
+        ]
+      },
+      "targetCandidates": [
+        "view.action-btn.upload-btn",
+        ".action-btn.upload-btn",
+        "/view/view[3]/view[2]"
+      ],
+      "timeStamp": 19641,
+      "waitfor": 0,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "textarea",
+      "command": "touchstart",
+      "target": "textarea.desc-input",
+      "childName": "textarea",
+      "path": "pages/album/album",
+      "text": "a",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "textarea.desc-input",
+        ".desc-input",
+        "/view/view[5]/view/view[2]/textarea"
+      ],
+      "timeStamp": 23793,
+      "waitfor": 4152,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "textarea",
+      "command": "touchend",
+      "target": "textarea.desc-input",
+      "childName": "textarea",
+      "path": "pages/album/album",
+      "text": "a",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "textarea.desc-input",
+        ".desc-input",
+        "/view/view[5]/view/view[2]/textarea"
+      ],
+      "timeStamp": 23800,
+      "waitfor": 7,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "textarea",
+      "command": "tap",
+      "target": "textarea.desc-input",
+      "childName": "textarea",
+      "path": "pages/album/album",
+      "text": "a",
+      "eventData": {
+        "detail": {
+          "x": 186.125,
+          "y": 359.8046569824219
+        }
+      },
+      "targetCandidates": [
+        "textarea.desc-input",
+        ".desc-input",
+        "/view/view[5]/view/view[2]/textarea"
+      ],
+      "timeStamp": 23800,
+      "waitfor": 0,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "textarea",
+      "command": "input",
+      "target": "textarea.desc-input",
+      "value": "2222",
+      "childName": "textarea",
+      "path": "pages/album/album",
+      "text": "2222",
+      "eventData": {},
+      "targetCandidates": [
+        "textarea.desc-input",
+        ".desc-input",
+        "/view/view[5]/view/view[2]/textarea"
+      ],
+      "timeStamp": 25453,
+      "waitfor": 1653,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchstart",
+      "target": "view.modal-btn.confirm-btn",
+      "value": null,
+      "path": "pages/album/album",
+      "text": "保存全部",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 285.3203125,
+            "clientY": 475.9297180175781,
+            "force": 1,
+            "pageX": 285.3203125,
+            "pageY": 475.9297180175781,
+            "screenX": 219.5,
+            "screenY": 501
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 285.3203125,
+            "clientY": 475.9297180175781,
+            "force": 1,
+            "pageX": 285.3203125,
+            "pageY": 475.9297180175781,
+            "screenX": 219.5,
+            "screenY": 501
+          }
+        ]
+      },
+      "targetCandidates": [
+        "view.modal-btn.confirm-btn",
+        ".modal-btn.confirm-btn",
+        "/view/view[5]/view/view[3]/view[2]"
+      ],
+      "timeStamp": 25769,
+      "waitfor": 316,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchend",
+      "target": "view.modal-btn.confirm-btn",
+      "value": null,
+      "path": "pages/album/album",
+      "text": "保存全部",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 285.3203125,
+            "clientY": 475.9297180175781,
+            "pageX": 285.3203125,
+            "pageY": 475.9297180175781,
+            "screenX": 219.5,
+            "screenY": 501
+          }
+        ],
+        "touches": []
+      },
+      "targetCandidates": [
+        "view.modal-btn.confirm-btn",
+        ".modal-btn.confirm-btn",
+        "/view/view[5]/view/view[3]/view[2]"
+      ],
+      "timeStamp": 25852,
+      "waitfor": 83,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "tap",
+      "target": "view.modal-btn.confirm-btn",
+      "value": null,
+      "path": "pages/album/album",
+      "text": "保存全部",
+      "eventData": {
+        "detail": {
+          "x": 285.3203125,
+          "y": 475.9297180175781
+        },
+        "changedTouches": [
+          {
+            "clientX": 285.3203125,
+            "clientY": 475.9297180175781,
+            "force": 1,
+            "pageX": 285.3203125,
+            "pageY": 475.9297180175781,
+            "screenX": 219.5,
+            "screenY": 501
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 285.3203125,
+            "clientY": 475.9297180175781,
+            "force": 1,
+            "pageX": 285.3203125,
+            "pageY": 475.9297180175781,
+            "screenX": 219.5,
+            "screenY": 501
+          }
+        ]
+      },
+      "targetCandidates": [
+        "view.modal-btn.confirm-btn",
+        ".modal-btn.confirm-btn",
+        "/view/view[5]/view/view[3]/view[2]"
+      ],
+      "timeStamp": 25853,
+      "waitfor": 1,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchstart",
+      "target": "view.modal-btn.confirm-btn",
+      "value": null,
+      "path": "pages/album/album",
+      "text": "保存全部",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 278.8671569824219,
+            "clientY": 467.0625305175781,
+            "force": 1,
+            "pageX": 278.8671569824219,
+            "pageY": 467.0625305175781,
+            "screenX": 215.5,
+            "screenY": 495.5
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 278.8671569824219,
+            "clientY": 467.0625305175781,
+            "force": 1,
+            "pageX": 278.8671569824219,
+            "pageY": 467.0625305175781,
+            "screenX": 215.5,
+            "screenY": 495.5
+          }
+        ]
+      },
+      "targetCandidates": [
+        "view.modal-btn.confirm-btn",
+        ".modal-btn.confirm-btn",
+        "/view/view[5]/view/view[3]/view[2]"
+      ],
+      "timeStamp": 26292,
+      "waitfor": 439,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchend",
+      "target": "view.modal-btn.confirm-btn",
+      "value": null,
+      "path": "pages/album/album",
+      "text": "保存全部",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 278.8671569824219,
+            "clientY": 467.0625305175781,
+            "pageX": 278.8671569824219,
+            "pageY": 467.0625305175781,
+            "screenX": 215.5,
+            "screenY": 495.5
+          }
+        ],
+        "touches": []
+      },
+      "targetCandidates": [
+        "view.modal-btn.confirm-btn",
+        ".modal-btn.confirm-btn",
+        "/view/view[5]/view/view[3]/view[2]"
+      ],
+      "timeStamp": 26392,
+      "waitfor": 100,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "tap",
+      "target": "view.modal-btn.confirm-btn",
+      "value": null,
+      "path": "pages/album/album",
+      "text": "保存全部",
+      "eventData": {
+        "detail": {
+          "x": 278.8671569824219,
+          "y": 467.0625305175781
+        },
+        "changedTouches": [
+          {
+            "clientX": 278.8671569824219,
+            "clientY": 467.0625305175781,
+            "force": 1,
+            "pageX": 278.8671569824219,
+            "pageY": 467.0625305175781,
+            "screenX": 215.5,
+            "screenY": 495.5
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 278.8671569824219,
+            "clientY": 467.0625305175781,
+            "force": 1,
+            "pageX": 278.8671569824219,
+            "pageY": 467.0625305175781,
+            "screenX": 215.5,
+            "screenY": 495.5
+          }
+        ]
+      },
+      "targetCandidates": [
+        "view.modal-btn.confirm-btn",
+        ".modal-btn.confirm-btn",
+        "/view/view[5]/view/view[3]/view[2]"
+      ],
+      "timeStamp": 26394,
+      "waitfor": 2,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchstart",
+      "target": "view.modal-btn.confirm-btn",
+      "value": null,
+      "path": "pages/album/album",
+      "text": "保存全部",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 278.8671569824219,
+            "clientY": 467.0625305175781,
+            "force": 1,
+            "pageX": 278.8671569824219,
+            "pageY": 467.0625305175781,
+            "screenX": 215.5,
+            "screenY": 495.5
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 278.8671569824219,
+            "clientY": 467.0625305175781,
+            "force": 1,
+            "pageX": 278.8671569824219,
+            "pageY": 467.0625305175781,
+            "screenX": 215.5,
+            "screenY": 495.5
+          }
+        ]
+      },
+      "targetCandidates": [
+        "view.modal-btn.confirm-btn",
+        ".modal-btn.confirm-btn",
+        "/view/view[5]/view/view[3]/view[2]"
+      ],
+      "timeStamp": 26456,
+      "waitfor": 62,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchend",
+      "target": "view.modal-btn.confirm-btn",
+      "value": null,
+      "path": "pages/album/album",
+      "text": "保存全部",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 278.8671569824219,
+            "clientY": 467.0625305175781,
+            "pageX": 278.8671569824219,
+            "pageY": 467.0625305175781,
+            "screenX": 215.5,
+            "screenY": 495.5
+          }
+        ],
+        "touches": []
+      },
+      "targetCandidates": [
+        "view.modal-btn.confirm-btn",
+        ".modal-btn.confirm-btn",
+        "/view/view[5]/view/view[3]/view[2]"
+      ],
+      "timeStamp": 26559,
+      "waitfor": 103,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "tap",
+      "target": "view.modal-btn.confirm-btn",
+      "value": null,
+      "path": "pages/album/album",
+      "text": "保存全部",
+      "eventData": {
+        "detail": {
+          "x": 278.8671569824219,
+          "y": 467.0625305175781
+        },
+        "changedTouches": [
+          {
+            "clientX": 278.8671569824219,
+            "clientY": 467.0625305175781,
+            "force": 1,
+            "pageX": 278.8671569824219,
+            "pageY": 467.0625305175781,
+            "screenX": 215.5,
+            "screenY": 495.5
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 278.8671569824219,
+            "clientY": 467.0625305175781,
+            "force": 1,
+            "pageX": 278.8671569824219,
+            "pageY": 467.0625305175781,
+            "screenX": 215.5,
+            "screenY": 495.5
+          }
+        ]
+      },
+      "targetCandidates": [
+        "view.modal-btn.confirm-btn",
+        ".modal-btn.confirm-btn",
+        "/view/view[5]/view/view[3]/view[2]"
+      ],
+      "timeStamp": 26561,
+      "waitfor": 2,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "timeStamp": 30889,
+      "waitfor": 4328,
+      "desc": "",
+      "layer": "tool",
+      "commandType": "operate",
+      "command": "stopRecord"
+    }
+  ]
+}
