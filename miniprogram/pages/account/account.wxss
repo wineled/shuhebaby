@@ -1,0 +1,406 @@
+/* pages/account/account.wxss */
+.container {
+  padding: 20rpx;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+}
+
+/* 头部样式 */
+.header {
+  text-align: center;
+  padding: 40rpx 20rpx;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(255, 107, 107, 0.2);
+}
+
+.title {
+  display: block;
+  font-size: 38rpx;
+  font-weight: bold;
+  color: #ff6b6b;
+  margin-bottom: 16rpx;
+}
+
+.subtitle {
+  font-size: 26rpx;
+  color: #ff9e9e;
+}
+
+/* 统计区域 */
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(255, 107, 107, 0.2);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ff6b6b;
+  margin-bottom: 8rpx;
+}
+
+.stat-label {
+  font-size: 24rpx;
+  color: #ff9e9e;
+}
+
+/* 表单区域 */
+.form-section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(255, 107, 107, 0.2);
+}
+
+.form-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #ff6b6b;
+  margin-bottom: 30rpx;
+  border-left: 6rpx solid #ff6b6b;
+  padding-left: 16rpx;
+}
+
+.form-item {
+  margin-bottom: 30rpx;
+}
+
+.form-label {
+  display: block;
+  font-size: 28rpx;
+  color: #ff6b6b;
+  margin-bottom: 16rpx;
+  font-weight: 500;
+}
+
+/* 统一输入框样式 - 金额和备注输入框与类型框和分类框大小一致 */
+.form-input {
+  border: 2rpx solid #ffd1d1;
+  border-radius: 12rpx;
+  padding: 24rpx 20rpx; /* 调整内边距与选择器一致 */
+  font-size: 28rpx;
+  background: #fffafa;
+  width: 100%;
+  box-sizing: border-box;
+  height: 88rpx; /* 固定高度与选择器一致 */
+  line-height: 40rpx; /* 调整行高使文字垂直居中 */
+  color: #ff6b6b;
+}
+
+.form-input:focus {
+  border-color: #ff6b6b;
+  background: white;
+}
+
+/* 金额输入框特殊样式 */
+.amount-input {
+  text-align: right; /* 金额右对齐 */
+  font-weight: bold; /* 金额加粗 */
+}
+
+/* 备注输入框特殊样式 */
+.remark-input {
+  /* 保持与其它输入框一致 */
+}
+
+/* 类型按钮样式 */
+.type-buttons {
+  display: flex;
+  gap: 20rpx;
+}
+
+.type-btn {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx 20rpx; /* 调整内边距与输入框一致 */
+  border: 2rpx solid #ffd1d1;
+  border-radius: 12rpx;
+  background: #fffafa;
+  transition: all 0.3s ease;
+  height: 88rpx; /* 固定高度与输入框一致 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.type-btn.active {
+  border-width: 3rpx;
+  font-weight: bold;
+}
+
+.type-btn.income.active {
+  border-color: #27ae60;
+  background: rgba(39, 174, 96, 0.1);
+}
+
+.type-btn.expense.active {
+  border-color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+}
+
+.type-text {
+  font-size: 28rpx;
+  color: #ff6b6b;
+}
+
+/* 选择器样式 - 与输入框保持一致 */
+.category-picker {
+  width: 100%;
+}
+
+.picker-display {
+  border: 2rpx solid #ffd1d1;
+  border-radius: 12rpx;
+  padding: 24rpx 20rpx; /* 调整内边距与输入框一致 */
+  background: #fffafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  color: #ff6b6b;
+  height: 88rpx; /* 固定高度与输入框一致 */
+  box-sizing: border-box;
+}
+
+.picker-arrow {
+  font-size: 24rpx;
+  color: #ff9e9e;
+}
+
+/* 添加按钮 */
+.add-button {
+  background: #ffd1d1;
+  color: white;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-top: 20rpx;
+  transition: all 0.3s ease;
+  width: 100%;
+  border: none;
+  height: 88rpx; /* 固定高度与输入框一致 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-button.active {
+  background: #ff6b6b;
+}
+
+.add-button.active:active {
+  background: #ff5252;
+  transform: scale(0.98);
+}
+
+/* 列表区域 */
+.list-section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(255, 107, 107, 0.2);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #ff6b6b;
+}
+
+.filter-controls {
+  display: flex;
+  align-items: center;
+}
+
+.filter-label {
+  font-size: 26rpx;
+  color: #ff9e9e;
+  margin-right: 16rpx;
+}
+
+.filter-picker {
+  border: 2rpx solid #ffd1d1;
+  border-radius: 8rpx;
+  padding: 12rpx 20rpx;
+  background: #fffafa;
+}
+
+.filter-display {
+  font-size: 26rpx;
+  color: #ff6b6b;
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+/* 记录列表 */
+.record-list {
+  min-height: 200rpx;
+}
+
+.record-item {
+  display: flex;
+  align-items: center;
+  padding: 24rpx;
+  border-radius: 16rpx;
+  margin-bottom: 16rpx;
+  background: #fffafa;
+  border-left: 8rpx solid #ffd1d1;
+  transition: all 0.3s ease;
+}
+
+.record-item.income {
+  border-left-color: #27ae60;
+}
+
+.record-item.expense {
+  border-left-color: #e74c3c;
+}
+
+.record-item:active {
+  transform: scale(0.98);
+}
+
+.record-icon {
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+
+.record-content {
+  flex: 1;
+}
+
+.record-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.record-category {
+  font-size: 28rpx;
+  color: #ff6b6b;
+  font-weight: 500;
+}
+
+.record-amount {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.record-amount.income {
+  color: #27ae60;
+}
+
+.record-amount.expense {
+  color: #e74c3c;
+}
+
+.record-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.record-date {
+  font-size: 24rpx;
+  color: #ff9e9e;
+}
+
+.record-remark {
+  font-size: 24rpx;
+  color: #ff9e9e;
+  font-style: italic;
+}
+
+.record-actions {
+  margin-left: 16rpx;
+}
+
+.action-icon {
+  width: 60rpx;
+  height: 60rpx;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.action-icon:active {
+  transform: scale(0.9);
+}
+
+/* 空状态 */
+.empty-state {
+  text-align: center;
+  padding: 80rpx 20rpx;
+}
+
+.empty-icon {
+  display: block;
+  font-size: 120rpx;
+  margin-bottom: 30rpx;
+  opacity: 0.5;
+}
+
+.empty-text {
+  display: block;
+  font-size: 32rpx;
+  color: #ff6b6b;
+  margin-bottom: 20rpx;
+}
+
+.empty-hint {
+  font-size: 26rpx;
+  color: #ff9e9e;
+  font-style: italic;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header,
+.stats-section,
+.form-section,
+.list-section {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.record-item {
+  animation: fadeIn 0.4s ease-out;
+}
