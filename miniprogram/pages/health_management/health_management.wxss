@@ -1,0 +1,613 @@
+/* pages/health_management/health_management.wxss */
+.container {
+  padding: 20rpx;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e6f7ff, #f0f9ff);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  padding-bottom: 120rpx;
+}
+
+/* 头部样式 */
+.header {
+  text-align: center;
+  padding: 40rpx 20rpx;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(52, 152, 219, 0.2);
+  color: white;
+}
+
+.title {
+  display: block;
+  font-size: 38rpx;
+  font-weight: bold;
+  margin-bottom: 16rpx;
+}
+
+.subtitle {
+  font-size: 26rpx;
+  opacity: 0.9;
+}
+
+/* 患者信息卡片 */
+.patient-card {
+  background: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+  border-left: 6rpx solid #3498db;
+}
+
+.patient-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding-bottom: 16rpx;
+  border-bottom: 2rpx solid #f5f5f5;
+}
+
+.patient-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.patient-status {
+  background: #27ae60;
+  padding: 8rpx 20rpx;
+  border-radius: 20rpx;
+}
+
+.status-indicator {
+  font-size: 22rpx;
+  color: white;
+  font-weight: 500;
+}
+
+.patient-info {
+  margin-bottom: 20rpx;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  padding: 12rpx 0;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 26rpx;
+  color: #7f8c8d;
+  width: 120rpx;
+  flex-shrink: 0;
+}
+
+.info-value {
+  font-size: 26rpx;
+  color: #2c3e50;
+  font-weight: 500;
+  flex: 1;
+}
+
+.risk-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+.risk-tag {
+  font-size: 22rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+  background: #e8f4fd;
+  color: #3498db;
+  font-weight: 500;
+}
+
+/* 通用卡片样式 */
+.section-card {
+  background: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+  border-left: 6rpx solid #3498db;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding-bottom: 16rpx;
+  border-bottom: 2rpx solid #f5f5f5;
+}
+
+.section-icon {
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  flex: 1;
+}
+
+/* 风险摘要样式 */
+.risk-summary {
+  background: #f8f9fa;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.risk-item {
+  margin-bottom: 16rpx;
+}
+
+.risk-item:last-child {
+  margin-bottom: 0;
+}
+
+.risk-label {
+  font-size: 26rpx;
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 8rpx;
+  display: block;
+}
+
+.risk-value {
+  font-size: 26rpx;
+  color: #34495e;
+  line-height: 1.5;
+  display: block;
+}
+
+/* 子章节样式 */
+.subsection {
+  margin-bottom: 30rpx;
+}
+
+.subsection-title {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 20rpx;
+  padding-left: 16rpx;
+  border-left: 4rpx solid #3498db;
+}
+
+.subsection-title.warning {
+  color: #e74c3c;
+  border-left-color: #e74c3c;
+}
+
+/* 建议项样式 */
+.advice-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 24rpx;
+  background: #f8f9fa;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  transition: all 0.3s ease;
+}
+
+.advice-item.warning {
+  background: #fff5f5;
+  border-left: 4rpx solid #e74c3c;
+}
+
+.advice-item:active {
+  background: #e8f4fd;
+  transform: scale(0.99);
+}
+
+.advice-icon {
+  font-size: 32rpx;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+  margin-top: 4rpx;
+}
+
+.advice-content {
+  flex: 1;
+}
+
+.advice-title {
+  display: block;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8rpx;
+}
+
+.advice-text {
+  font-size: 24rpx;
+  color: #34495e;
+  line-height: 1.5;
+}
+
+/* 复查提醒卡片样式 */
+.reminder-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.reminder-card-item {
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  border-radius: 16rpx;
+  padding: 30rpx;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.reminder-card-item:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.reminder-card-item[data-type="breast"] {
+  background: linear-gradient(135deg, #fd79a8, #e84393);
+}
+
+.reminder-card-item[data-type="bone"] {
+  background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+}
+
+.reminder-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.reminder-card-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  flex: 1;
+}
+
+.reminder-card-status {
+  font-size: 24rpx;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+  font-weight: 500;
+}
+
+.reminder-card-desc {
+  font-size: 26rpx;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* 健康生活方式提醒 */
+.health-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.health-tip {
+  display: flex;
+  align-items: center;
+  padding: 25rpx;
+  background: #f8f9fa;
+  border-radius: 16rpx;
+  border-left: 6rpx solid #3498db;
+}
+
+.health-tip-icon {
+  font-size: 40rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.health-tip-content {
+  flex: 1;
+}
+
+.health-tip-title {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8rpx;
+}
+
+.health-tip-text {
+  display: block;
+  font-size: 24rpx;
+  color: #7f8c8d;
+  margin-bottom: 10rpx;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12rpx;
+  background: #e0e0e0;
+  border-radius: 6rpx;
+  overflow: hidden;
+  margin: 10rpx 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  border-radius: 6rpx;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 22rpx;
+  color: #3498db;
+  font-weight: 500;
+}
+
+.health-tip-action {
+  background: #3498db;
+  color: white;
+  padding: 12rpx 24rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.health-tip-action:active {
+  background: #2980b9;
+  transform: scale(0.95);
+}
+
+.action-text {
+  white-space: nowrap;
+}
+
+/* 底部行动按钮 */
+.action-buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15rpx;
+  padding: 20rpx;
+  background: white;
+  box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx 10rpx;
+  border-radius: 16rpx;
+  transition: all 0.3s ease;
+  min-height: 120rpx;
+}
+
+.action-btn:active {
+  transform: scale(0.98);
+}
+
+.action-btn.primary {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  box-shadow: 0 4rpx 12rpx rgba(52, 152, 219, 0.3);
+}
+
+.action-btn.secondary {
+  background: white;
+  border: 2rpx solid #3498db;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+.btn-icon {
+  font-size: 36rpx;
+  margin-bottom: 8rpx;
+}
+
+.action-btn.primary .btn-icon {
+  color: white;
+}
+
+.action-btn.secondary .btn-icon {
+  color: #3498db;
+}
+
+.btn-text {
+  font-size: 24rpx;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.action-btn.primary .btn-text {
+  color: white;
+}
+
+.action-btn.secondary .btn-text {
+  color: #3498db;
+}
+
+/* 日期选择器模态框样式 */
+.date-picker-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: none;
+}
+
+.date-picker-modal.show {
+  display: block;
+}
+
+.modal-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 30rpx 30rpx 0 0;
+  padding: 40rpx 30rpx;
+  box-sizing: border-box;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 40rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.modal-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.picker-section {
+  margin-bottom: 40rpx;
+}
+
+.picker-item {
+  margin-bottom: 30rpx;
+}
+
+.picker-label {
+  display: block;
+  font-size: 28rpx;
+  color: #2c3e50;
+  margin-bottom: 16rpx;
+  font-weight: 500;
+}
+
+.picker-display {
+  border: 2rpx solid #e0e0e0;
+  border-radius: 12rpx;
+  padding: 24rpx 20rpx;
+  font-size: 28rpx;
+  color: #2c3e50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+}
+
+.picker-arrow {
+  font-size: 24rpx;
+  color: #7f8c8d;
+}
+
+.selected-time {
+  margin-top: 30rpx;
+  padding: 20rpx;
+  background: #e8f4fd;
+  border-radius: 12rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #3498db;
+  font-weight: 500;
+}
+
+.reminder-desc {
+  margin-top: 20rpx;
+  padding: 16rpx;
+  background: #f0f7ff;
+  border-radius: 8rpx;
+  border-left: 4rpx solid #3498db;
+  font-size: 24rpx;
+  color: #2c3e50;
+  line-height: 1.4;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 20rpx;
+}
+
+.modal-btn {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn {
+  background: #f5f5f5;
+  color: #7f8c8d;
+}
+
+.confirm-btn {
+  background: #3498db;
+  color: white;
+}
+
+.modal-btn:active {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.patient-card,
+.section-card,
+.action-buttons {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.advice-item,
+.reminder-card-item,
+.health-tip {
+  animation: fadeIn 0.4s ease-out;
+}
