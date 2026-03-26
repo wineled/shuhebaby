@@ -1,0 +1,103 @@
+<view class="container">
+  <!-- 顶部标题 -->
+  <view class="header">
+    <text class="title">舒赫宝宝相册</text>
+    <text class="subtitle">记录美好瞬间</text>
+  </view>
+
+  <!-- 分类标签 -->
+  <view class="category-tabs">
+    <view 
+      class="tab-item {{activeCategory === 'baby' ? 'active' : ''}}" 
+      bindtap="switchCategory" 
+      data-category="baby"
+    >
+      <text class="tab-icon">👶</text>
+      <text class="tab-text">宝宝照片</text>
+    </view>
+    <view 
+      class="tab-item {{activeCategory === 'adult' ? 'active' : ''}}" 
+      bindtap="switchCategory" 
+      data-category="adult"
+    >
+      <text class="tab-icon">👨‍👩‍👧</text>
+      <text class="tab-text">大人照片</text>
+    </view>
+    <view 
+      class="tab-item {{activeCategory === 'idCard' ? 'active' : ''}}" 
+      bindtap="switchCategory" 
+      data-category="idCard"
+    >
+      <text class="tab-icon">🆔</text>
+      <text class="tab-text">身份证</text>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-buttons">
+    <view class="action-btn photo-btn" bindtap="takePhoto">
+      <text class="btn-icon">📷</text>
+      <text class="btn-text">拍照</text>
+    </view>
+    <view class="action-btn upload-btn" bindtap="chooseImage">
+      <text class="btn-icon">🖼️</text>
+      <text class="btn-text">上传照片</text>
+    </view>
+  </view>
+
+  <!-- 照片网格 -->
+  <view class="photo-grid">
+    <view 
+      class="photo-item" 
+      wx:for="{{currentPhotos}}" 
+      wx:key="id"
+      bindtap="previewImage" 
+      data-url="{{item.url}}"
+      data-category="{{activeCategory}}"
+    >
+      <image class="photo-image" src="{{item.url}}" mode="aspectFill" lazy-load="true"></image>
+      <view class="photo-info">
+        <text class="photo-date">{{item.date}}</text>
+        <text class="photo-desc">{{item.desc || '无描述'}}</text>
+      </view>
+      <view class="photo-actions">
+        <view class="action-icon edit-icon" bindtap="editPhoto" data-id="{{item.id}}" catchtap>✏️</view>
+        <view class="action-icon delete-icon" bindtap="deletePhoto" data-id="{{item.id}}" catchtap>🗑️</view>
+      </view>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty-state" wx:if="{{currentPhotos.length === 0}}">
+      <text class="empty-icon">📸</text>
+      <text class="empty-text">还没有{{categoryText}}哦</text>
+      <text class="empty-hint">点击上方按钮添加{{categoryText}}</text>
+    </view>
+  </view>
+
+  <!-- 添加描述模态框 -->
+  <view class="modal {{showModal ? 'show' : ''}}">
+    <view class="modal-content">
+      <view class="modal-header">
+        <text class="modal-title">添加照片描述</text>
+        <view class="modal-close" bindtap="hideModal">×</view>
+      </view>
+      <view class="modal-body">
+        <view class="selected-count">
+          已选择 {{tempImagePaths.length}} 张照片
+        </view>
+        <textarea 
+          class="desc-input" 
+          placeholder="" 
+          value="{{photoDesc}}"
+          bindinput="onDescInput"
+          maxlength="50"
+        ></textarea>
+        <text class="char-count">{{photoDesc.length}}/50</text>
+      </view>
+      <view class="modal-footer">
+        <view class="modal-btn cancel-btn" bindtap="hideModal">取消</view>
+        <view class="modal-btn confirm-btn" bindtap="savePhotos">保存全部</view>
+      </view>
+    </view>
+  </view>
+</view>
